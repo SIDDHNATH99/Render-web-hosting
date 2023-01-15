@@ -7,21 +7,17 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+// app.get("/", function (req, res) {
+
+// 	res.sendFile(__dirname + "/Demo.html");
+// });
+
 app.get("/", function (req, res) {
 
-	res.sendFile(__dirname + "/Demo.html");
-});
+	res.send({
+		message : "yay done"
+	})
 
-app.post("/", function (req, res) {
-
-	console.log("in post", req.body);
-
-	var num1 = Number(req.body.n1);
-	var num2 = Number(req.body.n2);
-	var num3 = String(req.body.n3);
-	var num4 = String(req.body.n4);
-
-	res.send("yay done")
 });
 
 app.listen(3000, function () {
